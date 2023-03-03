@@ -1,0 +1,446 @@
+/* IMPORTS */
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
+
+/* IMPORTS */
+
+/* VARIABLES */
+
+body {
+  --bg-1: #eee;
+  --bg-2: #e9e9e9;
+  --bg-3: #e0e0e0;
+  --bg-4: #d0d0d0;
+  --bg-inverted-1: #111;
+  --bg-inverted-2: #333;
+  --bg-inverted-3: #555;;
+  --border-1: #ccc;
+  --border-2: #ddd;
+  --radius-1: 6px;
+  --radius-2: 10px;
+  --radius-3: 14px;
+  --shadow-1: 0 1px 2px 0 #00000069;
+  --shadow-2: 0 1px 1px 0 #00000040;
+  --shadow-3: 0 1px 1px 0 #00000020;
+  --shadow-inset-1: 0 0 100px 100px #00000040;
+  --shadow-inset-2: 0 0 100px 100px #00000020;
+  --shadow-inset-3: 0 0 100px 100px #00000010;
+  --color-1: #111;
+  --color-2: #242424;
+  --color-3: #404040;
+  --color-4: #626262;
+  --color-5: #848484;
+  --color-inverted-1: #eee;
+  --color-inverted-2: #ddd;
+  --color-inverted-3: #ccc;
+  --blue-1: #5583be;
+  --blue-2: #406697;
+  --red-1: #d16c93;
+  --red-2: #b35277;
+  --green-1: #6fd395;
+  --green-2: #4cb173;
+  --highlight-1: #937ecc;
+  --highlight-2: #8577d6;
+  --font-1: 0.7rem;
+  --font-2: 0.795rem;
+  --font-3: 0.89rem;
+  --font-4: 1.05rem;
+}
+
+/* VARIABLES */
+
+.fufu-table-wrapper {
+  color: var(--color-1);
+  font-size: var(--font-1);
+  position: relative;
+  font-family: "Nunito", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fufu-table {
+  width: 100%;
+  border-spacing: 0;
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-2);
+  table-layout: auto;
+  box-shadow: var(--shadow-1);
+}
+
+/* HEADER */
+
+.fufu-table
+  > .fufu-table-header
+  > .fufu-table-row.fufu-columns
+  > th.fufu-table-cell {
+  border-left: 1px solid var(--border-1);
+  padding: 5px 8px;
+  background: var(--bg-3);
+}
+
+.fufu-table.fufu-celled
+  > .fufu-table-header
+  > .fufu-table-row.fufu-columns
+  > th.fufu-table-cell {
+  border-bottom: 1px solid var(--border-1);
+}
+
+.fufu-table div.fufu-title-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fufu-table div.fufu-title-wrapper > label {
+  font-size: var(--font-4);
+  font-weight: 600;
+  margin-top: -2px;
+}
+
+.fufu-table .fufu-column-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.fufu-table .fufu-column-wrapper > .fufu-sort-button > label {
+  font-size: var(--font-3);
+  font-weight: 600;
+  color: var(--color-3);
+  cursor: pointer;
+}
+
+.fufu-table.fufu-large .fufu-column-wrapper > .fufu-sort-button > label {
+  color: var(--color-4);
+}
+
+.fufu-table .fufu-header-cell.fufu-index .fufu-column-wrapper > label {
+  color: var(--color-4);
+}
+
+.fufu-table
+  > .fufu-table-header
+  > .fufu-table-row.fufu-columns
+  > th.fufu-table-cell.fufu-index,
+.fufu-table .fufu-table-row td.fufu-table-cell.fufu-index {
+  max-width: 0;
+  color: var(--color-4);
+}
+
+.fufu-table
+  > .fufu-table-header
+  > .fufu-table-row.fufu-columns
+  > th.fufu-table-cell.fufu-left
+  > .fufu-column-wrapper {
+  justify-content: flex-start;
+}
+
+.fufu-table
+  > .fufu-table-header
+  > .fufu-table-row.fufu-columns
+  > th.fufu-table-cell.fufu-center
+  > .fufu-column-wrapper {
+  justify-content: center;
+}
+
+.fufu-table
+  > .fufu-table-header
+  > .fufu-table-row.fufu-columns
+  > th.fufu-table-cell.fufu-right
+  > .fufu-column-wrapper {
+  justify-content: flex-end;
+}
+
+.fufu-table .fufu-table-row td.fufu-table-cell.fufu-left {
+  text-align: left;
+}
+
+.fufu-table .fufu-table-row td.fufu-table-cell.fufu-center {
+  text-align: center;
+}
+
+.fufu-table .fufu-table-row td.fufu-table-cell.fufu-right {
+  text-align: right;
+}
+
+.fufu-table
+  > .fufu-table-header
+  > .fufu-table-row.fufu-columns
+  > th.fufu-table-cell:first-child {
+  border-left: none;
+}
+
+.fufu-table
+  > .fufu-table-header
+  > .fufu-table-row.fufu-header-actions
+  > th.fufu-actions-cell {
+  padding: 8px 6px;
+  background: var(--bg-4);
+  border: 0;
+  border-radius: calc(var(--radius-2) - 1px) calc(var(--radius-2) - 1px) 0 0;
+  overflow: hidden;
+}
+
+.fufu-table div.fufu-actions-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto;
+}
+
+.fufu-table-actions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.fufu-table-actions > .fufu-custom-action:first-child {
+  margin: 0;
+}
+
+.fufu-table-actions.default-actions {
+  justify-content: flex-end;
+}
+
+/* HEADER */
+
+/* BODY */
+
+.fufu-table .fufu-table-row td.fufu-table-cell {
+  border-left: 1px solid var(--border-1);
+  background: var(--bg-2);
+  font-size: var(--font-2);
+  font-weight: 500;
+  transition: box-shadow 0.1s ease-out;
+}
+
+.fufu-table.fufu-small .fufu-table-row td.fufu-table-cell {
+  padding: 4px 8px;
+}
+
+.fufu-table.fufu-medium .fufu-table-row td.fufu-table-cell {
+  padding: 8px 8px;
+}
+
+.fufu-table.fufu-large .fufu-table-row td.fufu-table-cell {
+  padding: 12px 8px;
+  font-weight: 600;
+}
+
+.fufu-table.fufu-hover
+  > .fufu-table-body
+  > .fufu-table-row:hover
+  > .fufu-table-cell {
+  box-shadow: inset var(--shadow-inset-3);
+}
+
+.fufu-table .fufu-table-row:last-child td.fufu-table-cell:first-child {
+  border-bottom-left-radius: calc(var(--radius-2) - 1px);
+}
+
+.fufu-table .fufu-table-row:last-child td.fufu-table-cell:last-child {
+  border-bottom-right-radius: calc(var(--radius-2) - 1px);
+}
+
+.fufu-table.fufu-celled .fufu-table-row td.fufu-table-cell {
+  border-bottom: 1px solid var(--border-1);
+}
+
+.fufu-table.fufu-celled .fufu-table-row:last-child td.fufu-table-cell {
+  border-bottom: none;
+}
+
+.fufu-table .fufu-table-row td.fufu-table-cell:first-child {
+  border-left: none;
+}
+
+/* BODY */
+
+/* MISC */
+
+.fufu-icon {
+  height: 100%;
+  width: var(--font-2);
+}
+
+.fufu-icon,
+.fufu-icon path {
+  fill: var(--color-1);
+  stroke: var(--color-1);
+  transition: stroke 0.15s ease-out, fill 0.15s ease-out;
+}
+
+/* MISC */
+
+/* BUTTONS */
+
+.fufu-button {
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-1);
+  background: var(--bg-3);
+  border: 0;
+  border-radius: var(--radius-1);
+  padding: 4px 8px;
+  margin-left: 3px;
+  color: var(--color-2);
+  transition: background 0.1s ease-out, color 0.15s ease-out;
+  box-shadow: var(--shadow-3);
+}
+
+.fufu-button > svg.fufu-icon,
+.fufu-button > svg.fufu-icon path {
+  fill: var(--color-3);
+  stroke: var(--color-3);
+}
+
+.fufu-button:hover {
+  background: var(--bg-1);
+  color: var(--color-1);
+}
+
+.fufu-button:hover > svg.fufu-icon,
+.fufu-button:hover > svg.fufu-icon path {
+  fill: var(--color-1);
+  stroke: var(--color-1);
+}
+
+.fufu-ghost {
+  background: none !important;
+  box-shadow: none;
+  border: 0;
+  padding: 2px;
+}
+
+.fufu-sort-button {
+  margin: 0;
+  margin-right: -10px;
+}
+
+.fufu-sort-button .fufu-icon {
+  transition: transform 0.2s ease-out;
+  margin-left: 2px;
+  margin-bottom: -1px;
+}
+
+.fufu-sort-button .fufu-icon,
+.fufu-sort-button .fufu-icon path {
+  fill: var(--color-5) !important;
+  stroke: var(--color-5) !important;
+}
+
+.fufu-sort-button:hover .fufu-icon,
+.fufu-sort-button:hover .fufu-icon path,
+.fufu-sort-button:hover:focus .fufu-icon,
+.fufu-sort-button:hover:focus .fufu-icon path {
+  fill: var(--color-3) !important;
+  stroke: var(--color-3) !important;
+}
+
+.fufu-sort-button.fufu-sort .fufu-icon,
+.fufu-sort-button.fufu-sort .fufu-icon path,
+.fufu-sort-button.fufu-sort:hover .fufu-icon,
+.fufu-sort-button.fufu-sort:hover .fufu-icon path,
+.fufu-sort-button.fufu-sort:focus .fufu-icon,
+.fufu-sort-button.sufu-sort:focus .fufu-icon path {
+  fill: var(--color-2) !important;
+  stroke: var(--color-2) !important;
+}
+
+.fufu-sort-button.fufu-sort.asc .fufu-icon {
+  transform: rotate(180deg);
+}
+
+.fufu-button.fufu-action-button > svg.fufu-icon {
+  width: var(--font-4);
+}
+
+.fufu-button.fufu-action-button.fufu-default-action.fufu-filter {
+  margin-top: -1px;
+  margin-right: 1px;
+}
+
+.fufu-button.fufu-action-button.fufu-custom-action {
+  background: var(--highlight-1);
+  color: var(--bg-1);
+}
+
+.fufu-button.fufu-action-button.fufu-custom-action:hover,
+.fufu-button.fufu-action-button.fufu-custom-action:focus {
+  background: var(--highlight-2);
+}
+
+/* BUTTONS */
+
+/* POPUP */
+.fufu-popup-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+}
+
+.fufu-popup {
+  white-space: nowrap;
+  position: relative;
+  padding: 4px 6px;
+  background: var(--bg-inverted-1);
+  box-shadow: 0 0 12px 0 #00000049;
+  border: 0;
+  border-radius: var(--radius-1);
+  color: var(--color-inverted-1);
+  font-size: var(--font-2);
+}
+
+.fufu-popup::before {
+  content: '';
+  background: var(--bg-inverted-1);
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.fufu-popup.n::before {
+  bottom: -3px;
+  left: calc(50% - 3px);
+}
+
+.fufu-popup.s::before {
+  top: -3px;
+  left: calc(50% - 3px);
+}
+
+.fufu-popup.e::before {
+  top: calc(50% - 3px);
+  left: -3px;
+}
+
+.fufu-popup.w::before {
+  top: calc(50% - 3px);
+  right: -3px;
+}
+
+.fufu-popup.nw::before {
+  bottom: 8px;
+  right: -3px;
+}
+
+.fufu-popup.sw::before {
+  top: 8px;
+  right: -3px;
+}
+
+.fufu-popup.ne::before {
+  bottom: 8px;
+  left: -3px;
+}
+
+.fufu-popup.se::before {
+  top: 8px;
+  left: -3px;
+}
+
+
+/* POPUP */
